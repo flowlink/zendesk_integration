@@ -1,0 +1,38 @@
+{
+    "name": "zendesk",
+    "display": "Zendesk",
+    "description": "Consumes Support Tickets and pass them into Zendesk",
+    "help": "http://guides.spreecommerce.com/integration/endpoints/zendesk",
+    "consumers": [
+        {
+            "name": "import",
+            "path": "/import",
+            "description": "Import new notification to Zendesk.",
+            "requires": {
+                "parameters": [
+                    {
+                        "name": "url",
+                        "description": "Destination Zendesk URL"
+                    },
+                    {
+                        "name": "username",
+                        "description": "Zendesk Username"
+                    },
+                    {
+                        "name": "token",
+                        "description": "Zendesk Login Token"
+                    }
+                ],
+                "humanizers": {}
+            },
+            "recommends": {
+                "keys": ["notification:info", "notification:warning", "notification:error"],
+                "options": {
+                    "retries_allowed": true
+                }
+            },
+            "produces": {
+            }
+        }
+    ]
+}
