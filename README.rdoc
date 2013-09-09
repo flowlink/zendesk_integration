@@ -2,4 +2,4 @@
 
 This is an endpoint application for the Spree Commerce hub. You can read more about the hub at http://guides.spreecommerce.com/integration/ .
 
-The Zendesk endpoint takes incoming notification messages from the hub and generates Zendesk tickets based on those messages.
+The Zendesk endpoint takes incoming notification messages with the "notification:error" or "notification:warn" type and generates Zendesk tickets based on them.
