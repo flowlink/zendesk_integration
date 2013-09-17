@@ -1,6 +1,4 @@
-require "sinatra/base"
-require "sinatra/json"
-require "endpoint_base"
+# require 'endpoint_base'
 
 Dir['./lib/*.rb'].each { |f| require f }
 

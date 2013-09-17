@@ -1,8 +1,8 @@
 {
     "name": "zendesk",
     "display": "Zendesk",
-    "description": "Consumes Support Tickets and pass them into Zendesk",
-    "help": "http://guides.spreecommerce.com/integration/endpoints/zendesk",
+    "description": "Consumes incoming notification messages and creates Zendesk tickets from them",
+    "help": "http://guides.spreecommerce.com/integration/zendesk_integration.html",
     "consumers": [
         {
             "name": "import",
