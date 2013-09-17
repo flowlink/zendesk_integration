@@ -21,9 +21,20 @@
                     {
                         "name": "token",
                         "description": "Zendesk Login Token"
+                    },
+                    {
+                        "name": "warning_priority",
+                        "description": "Ticket Priority for Warning Notifications"
+                    },
+                    {
+                        "name": "error_priority",
+                        "description": "Ticket Priority for Error Notifications"
                     }
                 ],
-                "humanizers": {}
+                "humanizers": {
+                    "200": "Message was imported to Zendesk.",
+                    "400": "Message could not be imported to Zendesk."
+                }
             },
             "recommends": {
                 "keys": ["notification:info", "notification:warning", "notification:error"],

@@ -19,4 +19,17 @@ class ZendeskEndpoint < EndpointBase
     end
     process_result code, result
   end
+
+
+  def map_priority(priority)
+    case priority
+    when "notification:warning"
+      # whatever they have configured for notification warning
+    when "notification:error"
+      # whatever they have configured for error warning
+    else
+      "Normal"
+    end
+  end
+
 end
