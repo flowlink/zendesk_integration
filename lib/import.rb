@@ -5,16 +5,18 @@ class Import
     @ticket.status = "new"
     @ticket.requester = { "name" => name, "email" => email }
     @ticket.subject = payload["subject"]
-    @ticket.comment = { :value => payload["description"] }
+    @ticket.comment = payload["description"]
     raise "Unable to save" unless @ticket.save
   end
 
   def map_priority(priority)
     case priority
     when "notification:warning"
-      @config["zendesk.warning_priority"] || "high" # whatever they have configured for notification warning
+      @config["zendesk.warning_priority"] || "high"
     when "notification:error"
-      @config["zendesk.error_priority"] || "urgent" # whatever they have configured for error warning
+      @config["zendesk.error_priority"] || "urgent"
+    else
+      "normal"
     end
   end
 end
