@@ -10,8 +10,6 @@ class Client
       config.url = configuration["zendesk.url"] # e.g. https://mydesk.zendesk.com/api/v2
       config.username = configuration["zendesk.username"]
       config.token = configuration["zendesk.token"]
-      config.warning_priority = configuration["zendesk.warning_priority"]
-      config.error_priority = configuration["zendesk.error_priority"]
 
       # Optional:
 

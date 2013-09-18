@@ -9,7 +9,7 @@ class ZendeskEndpoint < EndpointBase
     begin
       @config = config(@message)
       client = Client.new(@config)
-      p @message.inspect
+      # p @message.inspect
       ticket = Import.new(client.fetch, (@message[:message] || @message[:key]), @message[:payload], @config["zendesk.requester_name"], @config["zendesk.requester_email"])
       code = 200
       result = {'message_id' => @message[:message_id]}
@@ -21,15 +21,5 @@ class ZendeskEndpoint < EndpointBase
   end
 
 
-  def map_priority(priority)
-    case priority
-    when "notification:warning"
-      # whatever they have configured for notification warning
-    when "notification:error"
-      # whatever they have configured for error warning
-    else
-      "Normal"
-    end
-  end
 
 end

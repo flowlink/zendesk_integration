@@ -16,28 +16,36 @@
                     },
                     {
                         "name": "username",
-                        "description": "Zendesk Username"
+                        "description": "Zendesk Username/Email"
                     },
                     {
                         "name": "token",
-                        "description": "Zendesk Login Token"
+                        "description": "Zendesk API Login Token"
+                    },
+                    {
+                        "name": "requester_name",
+                        "description": "The name that goes in the Requester field on Zendesk"
+                    },
+                    {
+                        "name": "requester_email",
+                        "description": "The email of the Requester on Zendesk"
                     },
                     {
                         "name": "warning_priority",
-                        "description": "Ticket Priority for Warning Notifications"
+                        "description": "Ticket Priority for Warning Notifications (must be 'urgent', 'high', 'normal', or 'low')"
                     },
                     {
                         "name": "error_priority",
-                        "description": "Ticket Priority for Error Notifications"
+                        "description": "Ticket Priority for Error Notifications (must be 'urgent', 'high', 'normal', or 'low')"
                     }
                 ],
                 "humanizers": {
                     "200": "Message was imported to Zendesk.",
-                    "400": "Message could not be imported to Zendesk."
+                    "500": "Message could not be imported to Zendesk."
                 }
             },
             "recommends": {
-                "keys": ["notification:info", "notification:warning", "notification:error"],
+                "keys": ["notification:warning", "notification:error"],
                 "options": {
                     "retries_allowed": true
                 }
