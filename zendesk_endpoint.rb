@@ -12,14 +12,11 @@ class ZendeskEndpoint < EndpointBase
       # p @message.inspect
       ticket = Import.new(client.fetch, (@message[:message] || @message[:key]), @message[:payload], @config["zendesk.requester_name"], @config["zendesk.requester_email"])
       code = 200
-      result = {'message_id' => @message[:message_id]}
+      result = { "message_id" => @message[:message_id] }
     rescue Exception => e
       code = 500
-      result = {"error" => e.message, "trace" => e.backtrace.inspect}
+      result = { "error" => e.message, "trace" => e.backtrace.inspect }
     end
     process_result code, result
   end
-
-
-
 end

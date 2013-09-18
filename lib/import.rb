@@ -5,7 +5,7 @@ class Import
     @ticket.status = "new"
     @ticket.requester = { "name" => name, "email" => email }
     @ticket.subject = payload["subject"]
-    @ticket.comment = payload["description"]
+    @ticket.comment = { "body" => payload["description"] }
     raise "Unable to save" unless @ticket.save
   end
 
