@@ -20,8 +20,8 @@
                         "description": "Zendesk Username/Email"
                     },
                     {
-                        "name": "token",
-                        "description": "Zendesk API Login Token"
+                        "name": "password",
+                        "description": "Zendesk Login Password"
                     },
                     {
                         "name": "requester_name",

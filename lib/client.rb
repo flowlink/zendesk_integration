@@ -9,7 +9,7 @@ class Client
 
       config.url = configuration["zendesk.url"] # e.g. https://mydesk.zendesk.com/api/v2
       config.username = configuration["zendesk.username"]
-      config.token = configuration["zendesk.token"]
+      config.password = configuration["zendesk.password"]
 
       # Optional:
 
