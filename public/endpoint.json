@@ -45,7 +45,14 @@
                 }
             },
             "recommends": {
-                "keys": ["notification:warning", "notification:error"],
+                "messages": ["notification:warning", "notification:error"],
+                "filters": [
+                    {
+                        "path": "payload.message",
+                        "operator": "contains",
+                        "value": "((notification:error)|(notification:warning))"
+                    }
+                ],
                 "options": {
                     "retries_allowed": true
                 }
