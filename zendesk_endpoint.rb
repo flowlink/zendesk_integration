@@ -9,7 +9,7 @@ class ZendeskEndpoint < EndpointBase
     begin
       @config = config(@message)
       client = Client.new(@config)
-      ticket = Import.new(client.fetch, (@message[:message] || @message[:key]), @message[:payload], @config["zendesk.requester_name"], @config["zendesk.requester_email"])
+      ticket = Import.new(client.fetch, @message[:message], @message[:payload], @config["zendesk.requester_name"], @config["zendesk.requester_email"])
       code = 200
       result = { "message_id" => @message[:message_id], "notifications" => [ { "level" => "info", 
         "subject" => "Help ticket created", "description" => "New Zendesk ticket created." } ] }
