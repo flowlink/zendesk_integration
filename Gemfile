@@ -8,7 +8,7 @@ gem "zendesk_api"
 group :test do
   gem 'vcr'
   gem 'rspec', '2.11.0'
-  gem 'webmock'
+  gem 'webmock', '1.11.0'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
   gem 'rb-fsevent', '~> 0.9.1'

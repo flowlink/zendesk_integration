@@ -3,7 +3,7 @@ class Import
     @ticket = ZendeskAPI::Ticket.new(client) # doesn't actually send a request, must explicitly call #save
     @ticket.priority = map_priority(severity, config)
     @ticket.status = "new"
-    @ticket.requester = { "name" => config["zendesk.requester_name"], "email" => config["zendesk.requester_email"] }
+    @ticket.requester = { "name" => config["zendesk.requester_name"], "email" => config["zendesk.requester_email"], "role" => "end-user" }
     @ticket.subject = payload["subject"]
     @ticket.comment = { "body" => payload["description"] }
     raise "Unable to save" unless @ticket.save

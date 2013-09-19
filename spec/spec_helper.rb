@@ -8,11 +8,6 @@ Dir["./spec/support/**/*.rb"].each {|f| require f}
 
 Sinatra::Base.environment = 'test'
 
-def app
-  AuguryEndpoint
-end
-#
-
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.hook_into :webmock
