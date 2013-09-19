@@ -12,7 +12,7 @@ class ZendeskEndpoint < EndpointBase
       ticket = import.ticket
       code = 200
       result = { "message_id" => @message[:message_id], "notifications" => [ { "level" => "info", 
-        "subject" => "Help ticket created", "description" => "New Zendesk ticket number #{ticket.id} created." } ] }
+        "subject" => "Help ticket created", "description" => "New Zendesk ticket number #{ticket.id} created, priority: #{ticket.priority}." } ] }
     rescue Exception => e
       code = 500
       result = { "error" => e.message, "trace" => e.backtrace.inspect }

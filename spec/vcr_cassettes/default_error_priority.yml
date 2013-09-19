@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://me%40example.com:password123@example.zendesk.com/api/v2/tickets
+    body:
+      encoding: UTF-8
+      string: '{"ticket":{"priority":"urgent","status":"new","subject":"Invalid China
+        Order","requester":{"name":"Spree Integrator","email":"support@spreecommerce.com","role":"end-user","role_id":"end-user"},"comment":{"body":"This
+        order is shipping to China but was invalidly sent to PCH"}}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - ZendeskAPI API 1.0.5
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 19 Sep 2013 18:48:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2228'
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Cache-Control:
+      - no-cache
+      X-Zendesk-Api-Version:
+      - v2
+      Location:
+      - https://example.zendesk.com/api/v2/tickets/26.json
+      X-Runtime:
+      - '362'
+      X-Zendesk-Origin-Server:
+      - app40.pod1.ord.zdsys.com
+      X-Zendesk-User-Id:
+      - '447575443'
+      X-Zendesk-Request-Id:
+      - 00e4555c1ea5cbda3496
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"ticket":{"url":"https://example.zendesk.com/api/v2/tickets/26.json","id":26,"external_id":null,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"created_at":"2013-09-19T18:48:02Z","updated_at":"2013-09-19T18:48:02Z","type":null,"subject":"Invalid
+        China Order","description":"This order is shipping to China but was invalidly
+        sent to PCH","priority":"urgent","status":"new","recipient":null,"requester_id":474449878,"submitter_id":474449878,"assignee_id":null,"organization_id":null,"group_id":21052873,"collaborator_ids":[],"forum_topic_id":null,"problem_id":null,"has_incidents":false,"due_at":null,"tags":[],"custom_fields":[],"satisfaction_rating":null,"sharing_agreement_ids":[],"fields":[]},"audit":{"id":17446300188,"ticket_id":26,"created_at":"2013-09-19T18:48:02Z","author_id":447575443,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"metadata":{"system":{"client":"ZendeskAPI
+        API 1.0.5","ip_address":"96.27.166.102","location":"Newburgh, IN, United States","latitude":37.95679999999999,"longitude":-87.3515},"custom":{}},"events":[{"id":17446300198,"type":"Comment","author_id":474449878,"body":"This
+        order is shipping to China but was invalidly sent to PCH","html_body":"<p>This
+        order is shipping to China but was invalidly sent to PCH</p>","public":true,"trusted":true,"attachments":[]},{"id":17446300208,"type":"Create","value":"Invalid
+        China Order","field_name":"subject"},{"id":17446300218,"type":"Create","value":"urgent","field_name":"priority"},{"id":17446300228,"type":"Create","value":474449878,"field_name":"requester_id"},{"id":17446300238,"type":"Create","value":"new","field_name":"status"},{"id":17446300248,"type":"Create","value":null,"field_name":"type"},{"id":17446300258,"type":"Create","value":21052873,"field_name":"group_id"},{"id":17446300268,"type":"Notification","via":{"channel":"rule","source":{"to":{},"from":{"id":38229023,"title":"Notify
+        group of assignment"},"rel":"trigger"}},"subject":"[{{ticket.account}}] \"{{ticket.group.name}}\"
+        assignment:  {{ticket.title}}","body":"This ticket (#{{ticket.id}}) has been
+        assigned to group ''{{ticket.group.name}}'', of which you are a member.\n\n{{ticket.comments_formatted}}","recipients":[465159563,447575443]}]}}'
+    http_version: 
+  recorded_at: Thu, 19 Sep 2013 18:48:03 GMT
+recorded_with: VCR 2.5.0
