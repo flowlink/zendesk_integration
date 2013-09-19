@@ -7,12 +7,12 @@ class ZendeskEndpoint < EndpointBase
 
   post '/import' do
     begin
-      @config = config(@message)
       client = Client.new(@config)
-      ticket = Import.new(client.fetch, @message[:message], @message[:payload], @config["zendesk.requester_name"], @config["zendesk.requester_email"])
+      import = Import.new(client.fetch, @message[:message], @message[:payload], @config)
+      ticket = import.ticket
       code = 200
       result = { "message_id" => @message[:message_id], "notifications" => [ { "level" => "info", 
-        "subject" => "Help ticket created", "description" => "New Zendesk ticket created." } ] }
+        "subject" => "Help ticket created", "description" => "New Zendesk ticket number #{ticket.id} created." } ] }
     rescue Exception => e
       code = 500
       result = { "error" => e.message, "trace" => e.backtrace.inspect }
