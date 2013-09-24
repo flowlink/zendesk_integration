@@ -1,0 +1,164 @@
+GIT
+  remote: git@github.com:spree/endpoint_base.git
+  revision: 20ff4efcd2d7d9029c7252efd91202479c376eb6
+  specs:
+    endpoint_base (2.0)
+      activesupport
+      json
+      sinatra (= 1.4.3)
+      sinatra-contrib
+
+GEM
+  remote: https://www.rubygems.org/
+  specs:
+    activesupport (4.0.0)
+      i18n (~> 0.6, >= 0.6.4)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    addressable (2.3.5)
+    atomic (1.1.14)
+    backports (3.3.4)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    coderay (1.0.9)
+    columnize (0.3.6)
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
+    daemons (1.1.9)
+    debugger (1.6.1)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
+    diff-lcs (1.1.3)
+    dotenv (0.9.0)
+    eventmachine (1.0.3)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    ffi (1.9.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    formatador (0.2.4)
+    guard (1.8.3)
+      formatador (>= 0.2.4)
+      listen (~> 1.3)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-rspec (2.5.4)
+      guard (>= 1.1)
+      rspec (~> 2.11)
+    hashie (2.0.5)
+    highline (1.6.19)
+    i18n (0.6.5)
+    inflection (1.0.0)
+    json (1.8.0)
+    kgio (2.8.1)
+    listen (1.3.1)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
+    method_source (0.8.2)
+    mime-types (1.25)
+    minitest (4.7.5)
+    multi_json (1.8.0)
+    multipart-post (1.2.0)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    raindrops (0.12.0)
+    rb-fsevent (0.9.3)
+    rb-inotify (0.9.2)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
+    rspec (2.11.0)
+      rspec-core (~> 2.11.0)
+      rspec-expectations (~> 2.11.0)
+      rspec-mocks (~> 2.11.0)
+    rspec-core (2.11.1)
+    rspec-expectations (2.11.3)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.11.3)
+    safe_yaml (0.9.7)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.1)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    slop (3.4.6)
+    terminal-notifier-guard (1.5.3)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thor (0.18.1)
+    thread_safe (0.1.3)
+      atomic
+    tilt (1.4.1)
+    tzinfo (0.3.37)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+    vcr (2.5.0)
+    webmock (1.11.0)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
+    zendesk_api (1.0.5)
+      faraday (>= 0.8.0)
+      faraday_middleware (>= 0.8.7)
+      hashie (>= 1.2)
+      inflection
+      mime-types
+      multi_json
+      multipart-post
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capistrano
+  debugger
+  endpoint_base!
+  foreman
+  guard-rspec
+  rack-test
+  rb-fsevent (~> 0.9.1)
+  rspec (= 2.11.0)
+  terminal-notifier-guard
+  thin
+  unicorn
+  vcr
+  webmock (= 1.11.0)
+  zendesk_api
