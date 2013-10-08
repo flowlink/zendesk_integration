@@ -1,11 +1,9 @@
 class Import
   def initialize(client, severity, payload, config)
-    @ticket = ZendeskAPI::Ticket.new(client) # doesn't actually send a request, must explicitly call #save
-    @ticket.priority = map_priority(severity, config)
-    @ticket.status = "new"
-    @ticket.requester = { "name" => config["zendesk.requester_name"], "email" => config["zendesk.requester_email"], "role" => "end-user" }
-    @ticket.subject = payload["subject"]
-    @ticket.comment = { "body" => payload["description"] }
+    @ticket = ZendeskAPI::Ticket.new(client, :priority => map_priority(severity, config), :status => "new", 
+      :requester => { :name => config["zendesk.requester_name"], :email => config["zendesk.requester_email"], 
+      :role => "end-user" }, :subject => payload["subject"], 
+      :comment => { "body" => payload["description"] } ) # doesn't actually send a request, must explicitly call #save
     raise "Unable to save" unless @ticket.save
   end
 

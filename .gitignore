@@ -1,3 +1,4 @@
 Gemfile.lock
 tmp/
 notification_error.json
+notification_warning.json
