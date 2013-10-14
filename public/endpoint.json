@@ -46,10 +46,10 @@
                 }
             },
             "recommends": {
-                "messages": [ "notification:warning", "notification:error" ],
+                "messages": [ "notification:warn", "notification:error" ],
                 "filters": [
                     {
-                        "path": "payload.message",
+                        "path": "message",
                         "operator": "contains",
                         "value": "((notification:error)|(notification:warning))"
                     }
