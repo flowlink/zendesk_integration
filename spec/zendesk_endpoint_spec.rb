@@ -3,7 +3,7 @@ require 'spec_helper'
 # describe "Sinatra App" do
 describe ZendeskEndpoint do
 
-  def auth 
+  def auth
     {'HTTP_X_AUGURY_TOKEN' => 'x123', "CONTENT_TYPE" => "application/json"}
   end
 
@@ -13,10 +13,10 @@ describe ZendeskEndpoint do
   end
 
   let(:error_notification_payload) { { "message" => "notification:error", "message_id" => "518726r84910515003", "payload" => { "subject" => "Invalid China Order", "description" => "This order is shipping to China but was invalidly sent to PCH" } } }
-  let(:warning_notification_payload) { { "message" => "notification:warning", "message_id" => "518726r84910515004", "payload" => { "subject" => "Item out of stock", "description" => "This products requested in this order are not in stock." } } }
+  let(:warning_notification_payload) { { "message" => "notification:warn", "message_id" => "518726r84910515004", "payload" => { "subject" => "Item out of stock", "description" => "This products requested in this order are not in stock." } } }
   let(:info_notification_payload) { { "message" => "notification:info", "message_id" => "518726r84910515005", "payload" => { "subject" => "Order Received", "description" => "You have received an order." } } }
 
-  params = [ 
+  params = [
       { 'name' => 'zendesk.username', 'value' => 'me@example.com' },
       { 'name' => 'zendesk.password', 'value' => 'password123' },
       { 'name' => 'zendesk.url', 'value' => 'https://example.zendesk.com/api/v2/' },

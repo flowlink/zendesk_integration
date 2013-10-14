@@ -51,7 +51,7 @@
                     {
                         "path": "message",
                         "operator": "contains",
-                        "value": "((notification:error)|(notification:warning))"
+                        "value": "((notification:error)|(notification:warn))"
                     }
                 ],
                 "options": {
