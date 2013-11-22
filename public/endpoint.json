@@ -39,11 +39,7 @@
                         "name": "error_priority",
                         "description": "Ticket Priority for Error Notifications (must be 'urgent', 'high', 'normal', or 'low')"
                     }
-                ],
-                "humanizers": {
-                    "200": "Message was imported to Zendesk.",
-                    "500": "Message could not be imported to Zendesk."
-                }
+                ]
             },
             "recommends": {
                 "messages": [ "notification:warn", "notification:error" ],
