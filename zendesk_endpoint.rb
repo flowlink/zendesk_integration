@@ -1,10 +1,9 @@
-require 'endpoint_base'
+require "sinatra"
+require "endpoint_base"
 
 Dir['./lib/*.rb'].each { |f| require f }
 
-class ZendeskEndpoint < EndpointBase
-  helpers Sinatra::JSON
-
+class ZendeskEndpoint < EndpointBase::Sinatra::Base
   post '/import' do
     begin
       client = Client.new(@config)
