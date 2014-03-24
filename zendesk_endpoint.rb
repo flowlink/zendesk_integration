@@ -7,15 +7,12 @@ class ZendeskEndpoint < EndpointBase::Sinatra::Base
   post '/import' do
     begin
       client = Client.new(@config)
-      import = Import.new(client.fetch, @message[:message], @message[:payload], @config)
+      import = Import.new(client.fetch, @payload, @config)
+
       ticket = import.ticket
-      code = 200
-      result = { "message_id" => @message[:message_id], "notifications" => [ { "level" => "info", 
-        "subject" => "Help ticket created", "description" => "New Zendesk ticket number #{ticket.id} created, priority: #{ticket.priority}." } ] }
-    rescue Exception => e
-      code = 500
-      result = { "error" => e.message, "trace" => e.backtrace.inspect }
+      result 200, "New Zendesk ticket number #{ticket.id} created, priority: #{ticket.priority}." 
+    rescue => e
+      result 500, e.message
     end
-    process_result code, result
   end
 end

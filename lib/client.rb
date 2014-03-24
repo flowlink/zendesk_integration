@@ -1,15 +1,13 @@
+require 'zendesk_api'
+
 class Client
-
   def initialize(configuration)
-    
-    require 'zendesk_api'
-
     @client = ZendeskAPI::Client.new do |config|
-      # Mandatory:
 
-      config.url = configuration["zendesk.url"] # e.g. https://mydesk.zendesk.com/api/v2
-      config.username = configuration["zendesk.username"]
-      config.password = configuration["zendesk.password"]
+      # Mandatory:
+      config.url = configuration["zendesk_url"] # e.g. https://mydesk.zendesk.com/api/v2
+      config.username = configuration["zendesk_username"]
+      config.password = configuration["zendesk_password"]
 
       # Optional:
 
