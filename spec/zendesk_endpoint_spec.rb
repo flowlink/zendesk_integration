@@ -44,7 +44,7 @@ describe ZendeskEndpoint do
     error_notification_payload['parameters'] = full_params
 
     VCR.use_cassette('error_notification_import') do
-      post '/import', error_notification_payload.to_json, auth
+      post '/create_ticket', error_notification_payload.to_json, auth
       expect(last_response.status).to eq 200
       expect(json_response[:summary]).to match "New Zendesk ticket"
     end
@@ -54,7 +54,7 @@ describe ZendeskEndpoint do
     warning_notification_payload['parameters'] = full_params
 
     VCR.use_cassette('warning_notification_import') do
-      post '/import', warning_notification_payload.to_json, auth
+      post '/create_ticket', warning_notification_payload.to_json, auth
       last_response.status.should == 200
       expect(json_response[:summary]).to match "New Zendesk ticket"
     end
@@ -64,7 +64,7 @@ describe ZendeskEndpoint do
     warning_notification_payload['parameters']  = full_params
 
     VCR.use_cassette('custom_warning_priority') do
-      post '/import', warning_notification_payload.to_json, auth
+      post '/create_ticket', warning_notification_payload.to_json, auth
       last_response.body.should match /priority: normal/
     end
   end
@@ -73,7 +73,7 @@ describe ZendeskEndpoint do
     warning_notification_payload['parameters'] = params
 
     VCR.use_cassette('default_warning_priority') do
-      post '/import', warning_notification_payload.to_json, auth
+      post '/create_ticket', warning_notification_payload.to_json, auth
       last_response.body.should match /priority: high/
     end
   end
@@ -82,7 +82,7 @@ describe ZendeskEndpoint do
     error_notification_payload['parameters']  = full_params
 
     VCR.use_cassette('custom_error_priority') do
-      post '/import', error_notification_payload.to_json, auth
+      post '/create_ticket', error_notification_payload.to_json, auth
       last_response.body.should match /priority: high/
     end
   end
@@ -91,7 +91,7 @@ describe ZendeskEndpoint do
     error_notification_payload['parameters'] = params
 
     VCR.use_cassette('default_error_priority') do
-      post '/import', error_notification_payload.to_json, auth
+      post '/create_ticket', error_notification_payload.to_json, auth
       last_response.body.should match /priority: urgent/
     end
   end
