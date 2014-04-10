@@ -20,4 +20,4 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::Controllers
 end
 
-ENV['ENDPOINT_KEY'] = 'x123'
+ENV['ENDPOINT_KEY'] = '123'

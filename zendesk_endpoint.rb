@@ -4,6 +4,8 @@ require "endpoint_base"
 Dir['./lib/*.rb'].each { |f| require f }
 
 class ZendeskEndpoint < EndpointBase::Sinatra::Base
+  endpoint_key ENV['ENDPOINT_KEY']
+
   post '/import' do
     begin
       client = Client.new(@config)
