@@ -3,3 +3,13 @@
 This is an endpoint application for the Spree Commerce hub. You can read more about the hub at http://guides.spreecommerce.com/integration/ .
 
 The Zendesk endpoint takes incoming notification messages with the "notification:error" or "notification:warn" type and generates Zendesk tickets based on them.
+
+## Services
+
+#### Connection parameters
+
+| Name | Value | Example |
+| :----| :-----| :------ |
+| zendesk_url | Zendesk URL | https://mydesk.zendesk.com/api/v2 |
+| zendesk_username | User name | spree |
+| zendesk_password | Password | commerce |
