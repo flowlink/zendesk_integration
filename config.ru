@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
-Bundler.setup
-require "./zendesk_endpoint"
 
+Bundler.require(:default)
+
+require "./zendesk_endpoint"
 run ZendeskEndpoint
