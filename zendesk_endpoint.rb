@@ -13,9 +13,13 @@ class ZendeskEndpoint < EndpointBase::Sinatra::Base
 
   post '/create_ticket' do
     client = Client.new(@config)
-    import = Import.new(client.fetch, @payload, @config)
+    instance = Import.new(client.fetch, @payload, @config)
 
-    ticket = import.ticket
-    result 200, "New Zendesk ticket number #{ticket.id} created, priority: #{ticket.priority}."
+    if instance.save
+      ticket = instance.ticket
+      result 200, "New Zendesk ticket number #{ticket.id} created, priority: #{ticket.priority}."
+    else
+      result 500, "Unable to save"
+    end
   end
 end

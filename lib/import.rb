@@ -12,8 +12,10 @@ class Import
       :subject => payload["subject"],
       :comment => { "body" => payload["description"] }
     ) # doesn't actually send a request, must explicitly call #save
+  end
 
-    raise "Unable to save" unless @ticket.save
+  def save
+    @ticket.save
   end
 
   def ticket

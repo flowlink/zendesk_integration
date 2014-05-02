@@ -95,4 +95,13 @@ describe ZendeskEndpoint do
       last_response.body.should match /priority: urgent/
     end
   end
+
+  it "500 when cant save" do
+    Import.any_instance.stub save: false
+    error_notification_payload['parameters'] = full_params
+    post '/create_ticket', error_notification_payload.to_json, auth
+
+    expect(last_response.status).to eq 500
+    expect(json_response[:summary]).to match "Unable to save"
+  end
 end
