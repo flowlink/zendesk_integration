@@ -2,12 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://me%40example.com:password123@example.zendesk.com/api/v2/tickets
+    uri: https://spree%40spreecommerce.com:foobar@example.zendesk.com/api/v2/tickets
     body:
       encoding: UTF-8
-      string: '{"ticket":{"priority":"urgent","status":"new","subject":"Invalid China
-        Order","requester":{"name":"Spree Integrator","email":"support@spreecommerce.com","role":"end-user","role_id":"end-user"},"comment":{"body":"This
-        order is shipping to China but was invalidly sent to PCH"}}}'
+      string: '{"ticket":{"priority":"urgent","status":"new","requester":{"name":"Spree
+        Integrator","email":"support@spreecommerce.com","role":"end-user"},"subject":"Invalid
+        China Order","comment":{"body":"This order is shipping to China but was invalidly
+        sent to PCH"}}}'
     headers:
       Accept:
       - application/json
@@ -23,45 +24,57 @@ http_interactions:
       message: Created
     headers:
       Server:
-      - nginx/1.4.2
+      - nginx/1.4.4
       Date:
-      - Thu, 19 Sep 2013 18:48:02 GMT
+      - Wed, 21 May 2014 15:28:48 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
       Content-Length:
-      - '2228'
+      - '2302'
       Connection:
       - keep-alive
       Status:
       - 201 Created
-      Cache-Control:
-      - no-cache
       X-Zendesk-Api-Version:
       - v2
+      X-Frame-Options:
+      - SAMEORIGIN
       Location:
-      - https://example.zendesk.com/api/v2/tickets/26.json
-      X-Runtime:
-      - '362'
+      - https://example.zendesk.com/api/v2/tickets/598.json
       X-Zendesk-Origin-Server:
-      - app40.pod1.ord.zdsys.com
+      - app6.pod2.sac1.zdsys.com
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"338090c21f8ded2575a730a1f4389c54"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Zendesk-User-Id:
-      - '447575443'
+      - '297754360'
+      X-Request-Id:
+      - aecfd45934926615b6d4be2b0ad4abe3
+      X-Runtime:
+      - '0.416981'
+      X-Rack-Cache:
+      - invalidate, pass
       X-Zendesk-Request-Id:
-      - 00e4555c1ea5cbda3496
+      - 780da2a77753184ae4b7
       X-Content-Type-Options:
       - nosniff
     body:
       encoding: UTF-8
-      string: '{"ticket":{"url":"https://example.zendesk.com/api/v2/tickets/26.json","id":26,"external_id":null,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"created_at":"2013-09-19T18:48:02Z","updated_at":"2013-09-19T18:48:02Z","type":null,"subject":"Invalid
+      string: '{"ticket":{"url":"https://example.zendesk.com/api/v2/tickets/598.json","id":598,"external_id":null,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"created_at":"2014-05-21T15:28:48Z","updated_at":"2014-05-21T15:28:48Z","type":null,"subject":"Invalid
         China Order","description":"This order is shipping to China but was invalidly
-        sent to PCH","priority":"urgent","status":"new","recipient":null,"requester_id":474449878,"submitter_id":474449878,"assignee_id":null,"organization_id":null,"group_id":21052873,"collaborator_ids":[],"forum_topic_id":null,"problem_id":null,"has_incidents":false,"due_at":null,"tags":[],"custom_fields":[],"satisfaction_rating":null,"sharing_agreement_ids":[],"fields":[]},"audit":{"id":17446300188,"ticket_id":26,"created_at":"2013-09-19T18:48:02Z","author_id":447575443,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"metadata":{"system":{"client":"ZendeskAPI
-        API 1.0.5","ip_address":"96.27.166.102","location":"Newburgh, IN, United States","latitude":37.95679999999999,"longitude":-87.3515},"custom":{}},"events":[{"id":17446300198,"type":"Comment","author_id":474449878,"body":"This
+        sent to PCH","priority":"urgent","status":"open","recipient":null,"requester_id":307692350,"submitter_id":307692350,"assignee_id":297754360,"organization_id":null,"group_id":20678910,"collaborator_ids":[],"forum_topic_id":null,"problem_id":null,"has_incidents":false,"due_at":null,"tags":[],"custom_fields":[],"satisfaction_rating":null,"sharing_agreement_ids":[],"fields":[]},"audit":{"id":14973030904,"ticket_id":598,"created_at":"2014-05-21T15:28:48Z","author_id":297754360,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"metadata":{"system":{"client":"ZendeskAPI
+        API 1.0.5","ip_address":"209.190.253.162","location":"Bethesda, MD, United
+        States","latitude":39.006,"longitude":-77.1025},"custom":{}},"events":[{"id":14973030914,"type":"Comment","author_id":307692350,"body":"This
         order is shipping to China but was invalidly sent to PCH","html_body":"<p>This
-        order is shipping to China but was invalidly sent to PCH</p>","public":true,"trusted":true,"attachments":[]},{"id":17446300208,"type":"Create","value":"Invalid
-        China Order","field_name":"subject"},{"id":17446300218,"type":"Create","value":"urgent","field_name":"priority"},{"id":17446300228,"type":"Create","value":474449878,"field_name":"requester_id"},{"id":17446300238,"type":"Create","value":"new","field_name":"status"},{"id":17446300248,"type":"Create","value":null,"field_name":"type"},{"id":17446300258,"type":"Create","value":21052873,"field_name":"group_id"},{"id":17446300268,"type":"Notification","via":{"channel":"rule","source":{"to":{},"from":{"id":38229023,"title":"Notify
-        group of assignment"},"rel":"trigger"}},"subject":"[{{ticket.account}}] \"{{ticket.group.name}}\"
-        assignment:  {{ticket.title}}","body":"This ticket (#{{ticket.id}}) has been
-        assigned to group ''{{ticket.group.name}}'', of which you are a member.\n\n{{ticket.comments_formatted}}","recipients":[465159563,447575443]}]}}'
+        order is shipping to China but was invalidly sent to PCH</p>","public":true,"attachments":[]},{"id":14973030924,"type":"Create","value":"Invalid
+        China Order","field_name":"subject"},{"id":14973030934,"type":"Create","value":"urgent","field_name":"priority"},{"id":14973030944,"type":"Create","value":"307692350","field_name":"requester_id"},{"id":14973030954,"type":"Create","value":"open","field_name":"status"},{"id":14973030964,"type":"Create","value":null,"field_name":"type"},{"id":14973030974,"type":"Create","value":"297754360","field_name":"assignee_id"},{"id":14973030984,"type":"Create","value":"20678910","field_name":"group_id"},{"id":14973030994,"type":"Notification","via":{"channel":"rule","source":{"to":{},"from":{"id":28815890,"title":"Notify
+        requester of received request"},"rel":"trigger"}},"subject":"Request received:
+        {{ticket.title}}","body":"Your request ({{ticket.id}}) has been received and
+        is being reviewed by our support staff.\n\nTo add additional comments, reply
+        to this email.\n<br>{{ticket.comments_formatted}}]","recipients":[307692350]}]}}'
     http_version: 
-  recorded_at: Thu, 19 Sep 2013 18:48:03 GMT
+  recorded_at: Wed, 21 May 2014 15:28:48 GMT
 recorded_with: VCR 2.5.0

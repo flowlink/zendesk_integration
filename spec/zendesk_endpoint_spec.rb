@@ -2,33 +2,39 @@ require 'spec_helper'
 
 describe ZendeskEndpoint do
   let(:error_notification_payload) do
-    { 
-      "subject" => "Invalid China Order",
-      "description" => "This order is shipping to China but was invalidly sent to PCH",
-      "priority" => "error"
+    {
+      "ticket" => {
+        "subject" => "Invalid China Order",
+        "description" => "This order is shipping to China but was invalidly sent to PCH",
+        "priority" => "error"
+      }
     }
   end
 
   let(:warning_notification_payload) do
     {
-      "subject" => "Item out of stock",
-      "description" => "This products requested in this order are not in stock.",
-      "priority" => "warn"
+      "ticket" => {
+        "subject" => "Item out of stock",
+        "description" => "This products requested in this order are not in stock.",
+        "priority" => "warn"
+      }
     }
   end
 
   let(:info_notification_payload) do
     {
-      "subject" => "Order Received",
-      "description" => "You have received an order.",
-      "priority" => "info"
+      "ticket" => {
+        "subject" => "Order Received",
+        "description" => "You have received an order.",
+        "priority" => "info"
+      }
     }
   end
 
   params = {
-    'zendesk_username' => 'me@example.com',
-    'zendesk_password' => 'password123',
-    'zendesk_url' => 'https://example.zendesk.com/api/v2/',
+    'zendesk_username' => 'spree@spreecommerce.com',
+    'zendesk_password' => 'foobar',
+    'zendesk_url' => 'https://example.zendesk.com/api/v2',
     'zendesk_requester_name' => 'Spree Integrator',
     'zendesk_requester_email' => 'support@spreecommerce.com'
   }

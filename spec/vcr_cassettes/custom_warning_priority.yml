@@ -2,12 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://me%40example.com:password123@example.zendesk.com/api/v2/tickets
+    uri: https://spree%40spreecommerce.com:foobar@example.zendesk.com/api/v2/tickets
     body:
       encoding: UTF-8
-      string: '{"ticket":{"priority":"normal","status":"new","subject":"Item out of
-        stock","requester":{"name":"Spree Integrator","email":"support@spreecommerce.com","role":"end-user","role_id":"end-user"},"comment":{"body":"This
-        products requested in this order are not in stock."}}}'
+      string: '{"ticket":{"priority":"normal","status":"new","requester":{"name":"Spree
+        Integrator","email":"support@spreecommerce.com","role":"end-user"},"subject":"Item
+        out of stock","comment":{"body":"This products requested in this order are
+        not in stock."}}}'
     headers:
       Accept:
       - application/json
@@ -23,45 +24,57 @@ http_interactions:
       message: Created
     headers:
       Server:
-      - nginx/1.4.2
+      - nginx/1.4.4
       Date:
-      - Thu, 19 Sep 2013 18:48:00 GMT
+      - Wed, 21 May 2014 15:28:45 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
       Content-Length:
-      - '2206'
+      - '2280'
       Connection:
       - keep-alive
       Status:
       - 201 Created
-      Cache-Control:
-      - no-cache
       X-Zendesk-Api-Version:
       - v2
+      X-Frame-Options:
+      - SAMEORIGIN
       Location:
-      - https://example.zendesk.com/api/v2/tickets/23.json
-      X-Runtime:
-      - '313'
+      - https://example.zendesk.com/api/v2/tickets/595.json
       X-Zendesk-Origin-Server:
-      - app26.pod1.ord.zdsys.com
+      - app16.pod2.sac1.zdsys.com
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a0fda5ab5f7623b4e39ee0e2508599c9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Zendesk-User-Id:
-      - '447575443'
+      - '297754360'
+      X-Request-Id:
+      - 21b3a4bfd93b3aa778146a36aba8bcfa
+      X-Runtime:
+      - '0.485436'
+      X-Rack-Cache:
+      - invalidate, pass
       X-Zendesk-Request-Id:
-      - a4a0943fafbea7a9e791
+      - 586783a0154e0853bd8d
       X-Content-Type-Options:
       - nosniff
     body:
       encoding: UTF-8
-      string: '{"ticket":{"url":"https://example.zendesk.com/api/v2/tickets/23.json","id":23,"external_id":null,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"created_at":"2013-09-19T18:48:00Z","updated_at":"2013-09-19T18:48:00Z","type":null,"subject":"Item
+      string: '{"ticket":{"url":"https://example.zendesk.com/api/v2/tickets/595.json","id":595,"external_id":null,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"created_at":"2014-05-21T15:28:45Z","updated_at":"2014-05-21T15:28:45Z","type":null,"subject":"Item
         out of stock","description":"This products requested in this order are not
-        in stock.","priority":"normal","status":"new","recipient":null,"requester_id":474449878,"submitter_id":474449878,"assignee_id":null,"organization_id":null,"group_id":21052873,"collaborator_ids":[],"forum_topic_id":null,"problem_id":null,"has_incidents":false,"due_at":null,"tags":[],"custom_fields":[],"satisfaction_rating":null,"sharing_agreement_ids":[],"fields":[]},"audit":{"id":17365245706,"ticket_id":23,"created_at":"2013-09-19T18:48:00Z","author_id":447575443,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"metadata":{"system":{"client":"ZendeskAPI
-        API 1.0.5","ip_address":"96.27.166.102","location":"Newburgh, IN, United States","latitude":37.95679999999999,"longitude":-87.3515},"custom":{}},"events":[{"id":17365245726,"type":"Comment","author_id":474449878,"body":"This
+        in stock.","priority":"normal","status":"open","recipient":null,"requester_id":307692350,"submitter_id":307692350,"assignee_id":297754360,"organization_id":null,"group_id":20678910,"collaborator_ids":[],"forum_topic_id":null,"problem_id":null,"has_incidents":false,"due_at":null,"tags":[],"custom_fields":[],"satisfaction_rating":null,"sharing_agreement_ids":[],"fields":[]},"audit":{"id":14973028404,"ticket_id":595,"created_at":"2014-05-21T15:28:45Z","author_id":297754360,"via":{"channel":"api","source":{"from":{},"to":{},"rel":null}},"metadata":{"system":{"client":"ZendeskAPI
+        API 1.0.5","ip_address":"209.190.253.162","location":"Bethesda, MD, United
+        States","latitude":39.006,"longitude":-77.1025},"custom":{}},"events":[{"id":14973028424,"type":"Comment","author_id":307692350,"body":"This
         products requested in this order are not in stock.","html_body":"<p>This products
-        requested in this order are not in stock.</p>","public":true,"trusted":true,"attachments":[]},{"id":17365245766,"type":"Create","value":"Item
-        out of stock","field_name":"subject"},{"id":17365245786,"type":"Create","value":"normal","field_name":"priority"},{"id":17365245796,"type":"Create","value":474449878,"field_name":"requester_id"},{"id":17365245806,"type":"Create","value":"new","field_name":"status"},{"id":17365245816,"type":"Create","value":null,"field_name":"type"},{"id":17365245826,"type":"Create","value":21052873,"field_name":"group_id"},{"id":17365245846,"type":"Notification","via":{"channel":"rule","source":{"to":{},"from":{"id":38229023,"title":"Notify
-        group of assignment"},"rel":"trigger"}},"subject":"[{{ticket.account}}] \"{{ticket.group.name}}\"
-        assignment:  {{ticket.title}}","body":"This ticket (#{{ticket.id}}) has been
-        assigned to group ''{{ticket.group.name}}'', of which you are a member.\n\n{{ticket.comments_formatted}}","recipients":[465159563,447575443]}]}}'
+        requested in this order are not in stock.</p>","public":true,"attachments":[]},{"id":14973028434,"type":"Create","value":"Item
+        out of stock","field_name":"subject"},{"id":14973028444,"type":"Create","value":"normal","field_name":"priority"},{"id":14973028454,"type":"Create","value":"307692350","field_name":"requester_id"},{"id":14973028464,"type":"Create","value":"open","field_name":"status"},{"id":14973028484,"type":"Create","value":null,"field_name":"type"},{"id":14973028504,"type":"Create","value":"297754360","field_name":"assignee_id"},{"id":14973028534,"type":"Create","value":"20678910","field_name":"group_id"},{"id":14973028554,"type":"Notification","via":{"channel":"rule","source":{"to":{},"from":{"id":28815890,"title":"Notify
+        requester of received request"},"rel":"trigger"}},"subject":"Request received:
+        {{ticket.title}}","body":"Your request ({{ticket.id}}) has been received and
+        is being reviewed by our support staff.\n\nTo add additional comments, reply
+        to this email.\n<br>{{ticket.comments_formatted}}]","recipients":[307692350]}]}}'
     http_version: 
-  recorded_at: Thu, 19 Sep 2013 18:48:00 GMT
+  recorded_at: Wed, 21 May 2014 15:28:45 GMT
 recorded_with: VCR 2.5.0

@@ -1,8 +1,6 @@
 Dir['./lib/*.rb'].each { |f| require f }
 
 class ZendeskEndpoint < EndpointBase::Sinatra::Base
-  endpoint_key ENV['ENDPOINT_KEY']
-
   Honeybadger.configure do |config|
     config.api_key = ENV['HONEYBADGER_KEY']
     config.environment_name = ENV['RACK_ENV']
@@ -10,7 +8,7 @@ class ZendeskEndpoint < EndpointBase::Sinatra::Base
 
   post '/create_ticket' do
     client = Client.new(@config)
-    instance = Import.new(client.fetch, @payload, @config)
+    instance = Import.new(client.fetch, @payload[:ticket], @config)
 
     if instance.save
       ticket = instance.ticket
