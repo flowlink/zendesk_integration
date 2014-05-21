@@ -5,12 +5,12 @@ class Import
       :priority => 'normal',
       :status => "new",
       :requester => {
-        :name => config["zendesk_requester_name"],
-        :email => config["zendesk_requester_email"],
+        :name => payload[:customer],
+        :email => payload[:customer],
         :role => "end-user"
       },
-      :subject => payload["subject"],
-      :comment => { "body" => payload["description"] }
+      :subject => payload[:subject],
+      :comment => { "body" => payload[:description] }
     ) # doesn't actually send a request, must explicitly call #save
   end
 
@@ -20,16 +20,5 @@ class Import
 
   def ticket
     @ticket
-  end
-
-  def map_priority(priority, config)
-    case priority
-    when "warn"
-      config["zendesk_warning_priority"] || "high"
-    when "error"
-      config["zendesk_error_priority"] || "urgent"
-    else
-      "normal"
-    end
   end
 end
