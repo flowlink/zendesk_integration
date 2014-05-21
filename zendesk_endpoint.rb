@@ -1,6 +1,3 @@
-require "sinatra"
-require "endpoint_base"
-
 Dir['./lib/*.rb'].each { |f| require f }
 
 class ZendeskEndpoint < EndpointBase::Sinatra::Base

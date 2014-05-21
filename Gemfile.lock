@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/spree/endpoint_base.git
-  revision: f6c1859af1175bd4e29aa36823c8b02a2bb722c2
+  revision: 9aa893ed9462397fa4d35cc1d008f93a79113aeb
   specs:
     endpoint_base (0.3)
       activesupport
@@ -10,7 +10,7 @@ GIT
 GEM
   remote: https://www.rubygems.org/
   specs:
-    activesupport (4.1.0)
+    activesupport (4.1.1)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -52,7 +52,7 @@ GEM
       json
     i18n (0.6.9)
     inflection (1.0.0)
-    jbuilder (2.0.6)
+    jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     json (1.8.1)
@@ -64,8 +64,8 @@ GEM
     lumberjack (1.0.4)
     method_source (0.8.2)
     mime-types (1.25)
-    minitest (5.3.2)
-    multi_json (1.9.2)
+    minitest (5.3.4)
+    multi_json (1.10.1)
     multipart-post (1.2.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
