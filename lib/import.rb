@@ -2,7 +2,7 @@ class Import
   def initialize(client, payload, config)
     @ticket = ZendeskAPI::Ticket.new(
       client,
-      :priority => map_priority(payload[:priority], config),
+      :priority => 'normal',
       :status => "new",
       :requester => {
         :name => config["zendesk_requester_name"],
