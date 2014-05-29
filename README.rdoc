@@ -1,4 +1,4 @@
-# Zendesk Endpoint
+# Zendesk Integration
 
 This is a fully hosted and supported integration for use with the [Wombat](http://wombat.co) product. With this integration you can perform the following functions:
 
