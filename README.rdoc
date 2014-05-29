@@ -1,15 +1,11 @@
-=== Zendesk Endpoint
+# Zendesk Endpoint
 
-This is an endpoint application for the Spree Commerce hub. You can read more about the hub at http://guides.spreecommerce.com/integration/ .
+This is a fully hosted and supported integration for use with the [Wombat](http://wombat.co) product. With this integration you can perform the following functions:
 
-The Zendesk endpoint takes incoming notification messages with the "notification:error" or "notification:warn" type and generates Zendesk tickets based on them.
+* Create support tickets in Zendesk if there is an error notification in Wombat.
 
-## Services
+[Wombat](http://wombat.co) allows you to connect to your own custom integrations.  Feel free to modify the source code and host your own version of the integration - or beter yet, help to make the official integration better by submitting a pull request!
 
-#### Connection parameters
+![Wombat Logo](http://spreecommerce.com/images/wombat_logo.png)
 
-| Name | Value | Example |
-| :----| :-----| :------ |
-| zendesk_url | Zendesk URL | https://mydesk.zendesk.com/api/v2 |
-| zendesk_username | User name | spree |
-| zendesk_password | Password | commerce |
+This integration is 100% open source an licensed under the terms of the New BSD License.
